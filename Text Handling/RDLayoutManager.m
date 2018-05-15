@@ -9,13 +9,13 @@
 #import "RDLayoutManager.h"
 #import "RDTextView.h"
 
-#if __LP64__
-typedef int NSInteger;
-typedef unsigned int NSUInteger;
-#else
-typedef long NSInteger;
-typedef unsigned long NSUInteger;
-#endif 
+//#if __LP64__
+//typedef int NSInteger;
+//typedef unsigned int NSUInteger;
+//#else
+//typedef long NSInteger;
+//typedef unsigned long NSUInteger;
+//#endif 
 
 @implementation RDLayoutManager
 

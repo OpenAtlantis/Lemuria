@@ -39,7 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // For the CGShadings
 //
 
-static void RSLinearColorBlendFunction (void *info, const float *in, float *out);
+static void RSLinearColorBlendFunction (void *info, const double *in, double *out);
 
 static const CGFunctionCallbacks kRSLinearFunctionCallbacks = { 0, &RSLinearColorBlendFunction, nil };
 
@@ -76,7 +76,7 @@ static const CGFunctionCallbacks kRSLinearFunctionCallbacks = { 0, &RSLinearColo
 					    blue: &fColors.fColor2.fBlue
 					   alpha: &fColors.fColor2.fAlpha];
 
-		static const float domainAndRange[8] = { 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 };
+		static const double domainAndRange[8] = { 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 };
 		
 		fBlendFunctionRef	= CGFunctionCreate ( &fColors, 1, domainAndRange, 4, domainAndRange, &kRSLinearFunctionCallbacks);
 		fColorSpaceRef		= CGColorSpaceCreateDeviceRGB();
@@ -113,7 +113,7 @@ static const CGFunctionCallbacks kRSLinearFunctionCallbacks = { 0, &RSLinearColo
 // RSLinearColorBlendFunction
 //////////////////////////////////////////////////////////////////////////////
 
-void RSLinearColorBlendFunction (void *info, const float *in, float *out)
+void RSLinearColorBlendFunction (void *info, const double *in, double *out)
 {
 	RSAxialColors* colors = (RSAxialColors *)info;
 	

@@ -37,10 +37,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 typedef struct
 {
-	float	fRed;
-	float	fGreen;
-	float	fBlue;
-	float	fAlpha;
+	double	fRed;
+	double	fGreen;
+	double	fBlue;
+	double	fAlpha;
 } RSAxialColorValues;
 
 typedef struct

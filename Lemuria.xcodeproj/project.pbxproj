@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53C9E69D20AA863D0039E316 /* PTYTabView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53C9E69B20AA863D0039E316 /* PTYTabView.h */; };
+		53C9E69E20AA863D0039E316 /* PTYTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C9E69C20AA863D0039E316 /* PTYTabView.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		FF21CDDB0999CC1B0029EC72 /* sheetinfo.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF21CDDA0999CC1B0029EC72 /* sheetinfo.strings */; };
@@ -142,6 +144,8 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* Lemuria_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lemuria_Prefix.pch; sourceTree = "<group>"; };
+		53C9E69B20AA863D0039E316 /* PTYTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTYTabView.h; path = PSMTabBarControl/source/PTYTabView.h; sourceTree = "<group>"; };
+		53C9E69C20AA863D0039E316 /* PTYTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTYTabView.m; path = PSMTabBarControl/source/PTYTabView.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Lemuria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lemuria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -434,6 +438,8 @@
 		FF351CCA0C06292800F436BE /* PSMTabBarControl */ = {
 			isa = PBXGroup;
 			children = (
+				53C9E69B20AA863D0039E316 /* PTYTabView.h */,
+				53C9E69C20AA863D0039E316 /* PTYTabView.m */,
 				FFADDE3A0C93C84900BE1C92 /* PSMAdiumTabStyle.h */,
 				FFADDE3B0C93C84900BE1C92 /* PSMAdiumTabStyle.m */,
 				FFADDE3C0C93C84900BE1C92 /* PSMTabDragWindow.h */,
@@ -596,6 +602,7 @@
 				FF2BC71F0A57B9CA001AF02B /* RDNestedTabView.h in Headers */,
 				FF2BC98E0A58D87C001AF02B /* RDTabViewItem.h in Headers */,
 				FFDC37950C028EFC008790F5 /* RSActionPopUpButton.h in Headers */,
+				53C9E69D20AA863D0039E316 /* PTYTabView.h in Headers */,
 				FFDC37970C028EFC008790F5 /* RSActionPopUpButtonCell.h in Headers */,
 				FFDC379C0C028EFC008790F5 /* RSGradientSquareButton.h in Headers */,
 				FFDC379E0C028EFC008790F5 /* RSGradientSquareButtonCell.h in Headers */,
@@ -648,6 +655,8 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Lemuria" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -742,6 +751,7 @@
 				FFC71C7C09AEF12600726AF4 /* RDChainedListButton.m in Sources */,
 				FF3CEEFD0A57050C00FA9F86 /* RBSplitSubview.m in Sources */,
 				FF3CEEFF0A57050C00FA9F86 /* RBSplitView.m in Sources */,
+				53C9E69E20AA863D0039E316 /* PTYTabView.m in Sources */,
 				FF2BC7200A57B9CA001AF02B /* RDNestedTabView.m in Sources */,
 				FF2BC98F0A58D87C001AF02B /* RDTabViewItem.m in Sources */,
 				FFDC37960C028EFC008790F5 /* RSActionPopUpButton.mm in Sources */,
@@ -794,6 +804,7 @@
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -817,10 +828,7 @@
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
