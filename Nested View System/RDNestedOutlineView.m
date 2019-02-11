@@ -91,10 +91,10 @@
         [proto setFont:[NSFont systemFontOfSize:11.0f]];
         [tvc setDataCell:proto];
         [proto release];
-       if ([[RDNestedViewManager manager] isTiger])
+//       if ([[RDNestedViewManager manager] isTiger])
             [tvc setResizingMask:(1 << 0)];
-        else
-            [tvc setResizable:YES];
+//        else
+//            [tvc setResizable:YES];
         [[tvc dataCell] setFont:[NSFont systemFontOfSize:11.0f]];
         [_rdOutlineView addTableColumn:tvc];
         [_rdOutlineView setOutlineTableColumn:tvc];

@@ -396,9 +396,9 @@ static RDNestedViewManager *sManager = nil;
     }
     
     unsigned int styleMask = (NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask);
-    if ([self isTiger]) {
+//    if ([self isTiger]) {
         styleMask = styleMask | (1 << 12);
-    }
+//    }
     
     RDNestedViewWindow * window = [[RDNestedViewWindow alloc] initWithUID:name contentRect:rect styleMask:styleMask backing:NSBackingStoreBuffered defer:NO];    
     [_rdWindows setValue:window forKey:name];

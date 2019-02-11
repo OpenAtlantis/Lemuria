@@ -16,8 +16,10 @@ static NSImage *s_folderIcon = nil;
 
 NSInteger compareViews(id view1, id view2, void *context)
 {
-    unsigned weight1 = [view1 viewWeight];
-    unsigned weight2 = [view2 viewWeight];
+    NSUInteger weight1 = [view1 viewWeight];
+    NSUInteger weight2 = [view2 viewWeight];
+    
+    NSLog(@"Comparing %@ (%d) to %@ (%d)", [view1 viewName], weight1, [view2 viewName], weight2);
     
     if (weight1 < weight2) {
         return NSOrderedDescending;
@@ -183,7 +185,7 @@ NSInteger compareViews(id view1, id view2, void *context)
     return YES;
 }
 
-- (unsigned) viewWeight
+- (NSUInteger) viewWeight
 {
     return _rdWeight;
 }

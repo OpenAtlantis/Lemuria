@@ -94,7 +94,7 @@
 
 - (void) recolorCursor
 {
-    if ([[RDNestedViewManager manager] isTiger]) {
+//    if ([[RDNestedViewManager manager] isTiger]) {
         if (!_rdBaseCursor) {
             NSCursor *iBeam = [NSCursor IBeamCursor];
             NSImage *iBeamImg = [[iBeam image] copy];
@@ -120,7 +120,7 @@
         
         [[self enclosingScrollView] setDocumentCursor:_rdBaseCursor];
         [self addCursorRect:[self visibleRect] cursor:_rdBaseCursor];
-    }
+//    }
 }
 
 - (void) setBackgroundColor:(NSColor *)color
