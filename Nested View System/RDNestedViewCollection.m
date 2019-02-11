@@ -19,8 +19,6 @@ NSInteger compareViews(id view1, id view2, void *context)
     NSUInteger weight1 = [view1 viewWeight];
     NSUInteger weight2 = [view2 viewWeight];
     
-    NSLog(@"Comparing %@ (%d) to %@ (%d)", [view1 viewName], weight1, [view2 viewName], weight2);
-    
     if (weight1 < weight2) {
         return NSOrderedDescending;
     }

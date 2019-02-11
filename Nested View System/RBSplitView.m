@@ -495,6 +495,27 @@ static inline CGFloat fMAX(CGFloat a,CGFloat b) {
 	}
 }
 
+- (void)setDividerBackground:(NSImage *)image
+{
+    if (![self couplingSplitView]) {
+        [dividerBg autorelease];
+        if ([image isFlipped]) {
+            // If the image is flipped, we just retain it.
+            dividerBg = [image retain];
+        } else {
+            // if the image isn't flipped, we copy the image instead of retaining it, and flip the copy.
+            dividerBg = [image copy];
+            [dividerBg setFlipped:YES];
+        }
+        // We set the thickness to 0.0 so the image dimension will prevail.
+    }
+}
+- (NSImage*)dividerBackground
+{
+    return dividerBg;
+}
+
+
 // These three methods add subviews. If aView isn't a RBSplitSubview, one is automatically inserted above
 // it, and aView's frame and resizing mask is set to occupy the entire RBSplitSubview.
 - (void)addSubview:(NSView*)aView {
@@ -810,11 +831,16 @@ static inline CGFloat fMAX(CGFloat a,CGFloat b) {
 // Fill the view with the background color (if there's any). Don't draw the background again for
 // thumbs.
 	if (leading||trailing) {
-		NSColor* bg = [self background];
-		if (bg) {
-			[bg set];
-			NSRectFillUsingOperation(rect,NSCompositeSourceOver);
-		}
+        if (dividerBg) {
+            [dividerBg drawInRect:rect];
+        }
+        else {
+            NSColor* bg = [self background];
+            if (bg) {
+                [bg set];
+                NSRectFillUsingOperation(rect,NSCompositeSourceOver);
+            }
+        }
 	}
 // Center the image, if there is one.
 	NSRect imrect = NSZeroRect;
