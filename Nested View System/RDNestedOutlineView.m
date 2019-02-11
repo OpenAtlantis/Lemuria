@@ -72,6 +72,7 @@
         _rdOutlineView = [[RDOutlineView alloc] initWithFrame:outlineCoreRect];
         [_rdOutlineView setDataSource:self];
         [_rdOutlineView setDelegate:self];
+        [_rdOutlineView setRowHeight:16.0f];
         [_rdOutlineView setFocusRingType:NSFocusRingTypeNone];
         [_rdOutlineView setBackgroundColor:[NSColor colorWithDeviceRed:0.906 green:0.930 blue:0.965 alpha:1.0]];
         [_rdOutlineView setUsesGradientSelection:YES];
@@ -82,10 +83,7 @@
         NSTableColumn *tvc = [[NSTableColumn alloc] initWithIdentifier:@"activity"];
         [tvc setWidth:16.0f];
         [tvc setDataCell:[[NSImageCell alloc] init]];
-        if ([[RDNestedViewManager manager] isTiger] || [[RDNestedViewManager manager] isLeopard])
-            [tvc setResizingMask:0];
-        else
-            [tvc setResizable:NO];
+        [tvc setResizingMask:0];
         [_rdOutlineView addTableColumn:tvc];
         
         tvc = [[NSTableColumn alloc] initWithIdentifier:@"name"];
@@ -626,6 +624,8 @@
 
 - (id) outlineView:(NSOutlineView *)view objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
 {
+    NSRect rowRect = [view rectOfRow:[view rowForItem:item]];
+    
     if ([item conformsToProtocol:@protocol(RDNestedViewDescriptor)]) {
         if ([[tableColumn identifier] isEqualToString:@"name"]) {
             if ([[NSUserDefaults standardUserDefaults] boolForKey:@"lemuria.display.trafficIcon"]) {
@@ -633,7 +633,7 @@
                 int level = [view levelForRow:row];
                 BOOL allSmall = [[NSUserDefaults standardUserDefaults] boolForKey:@"lemuria.display.smallicons"];
 
-                float maxSideSize = (level || allSmall) ? 16.0 : 32.0;
+                float maxSideSize = 16.0f;
                 NSImage *org = [item viewIcon];
 
                 if( [org size].width > maxSideSize || [org size].height > maxSideSize ) {
@@ -738,14 +738,16 @@
     return NO;
 }
 
-- (float) outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id) item
-{
-    return 16.0;
-}
+//- (float) outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id) item
+//{
+//    return 16.0f;
+//}
 
 
 - (void)outlineView:(NSOutlineView *)outlineView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {
+    NSRect rowRect = [outlineView rectOfRow:[outlineView rowForItem:item]];
+    
     if (outlineView == _rdOutlineView) {
         int row = [_rdOutlineView rowForItem:item];
         int col = [_rdOutlineView columnWithIdentifier:[tableColumn identifier]];

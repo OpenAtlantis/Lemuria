@@ -13,9 +13,9 @@
 - (void) _highlightRow:(int) row clipRect:(NSRect) clip;
 @end
 
-static void gradientInterpolate( void *info, float const *inData, float *outData ) {
-	static float light[4] = { 0.67843137, 0.73333333, 0.81568627, 1. };
-	static float dark[4] = { 0.59607843, 0.66666667, 0.76862745, 1. };
+static void gradientInterpolate( void *info, double const *inData, double *outData ) {
+	static double light[4] = { 0.67843137, 0.73333333, 0.81568627, 1. };
+	static double dark[4] = { 0.59607843, 0.66666667, 0.76862745, 1. };
 	float a = inData[0];
 	int i = 0;
 

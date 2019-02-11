@@ -66,6 +66,7 @@
         
         _rdOutlineView = [[RDOutlineView alloc] initWithFrame:outlineCoreRect];
         [_rdOutlineView setBackgroundColor:[NSColor colorWithDeviceRed:0.906 green:0.930 blue:0.965 alpha:1.0]];
+        [_rdOutlineView setRowHeight:32.0f];
         [_rdOutlineView setUsesGradientSelection:YES];
         [_rdOutlineView setDataSource:self];
         [_rdOutlineView setDelegate:self];
@@ -79,10 +80,7 @@
         [proto setFont:[NSFont systemFontOfSize:11.0f]];
         [tvc setDataCell:proto];
         [proto release];
-        if ([[RDNestedViewManager manager] isTiger])
-            [(id)tvc setResizingMask:(1 << 0)];
-        else
-            [tvc setResizable:YES];
+        [(id)tvc setResizingMask:(1 << 0)];
         [_rdOutlineView addTableColumn:tvc];
         [_rdOutlineView setOutlineTableColumn:tvc];
         [_rdOutlineView sizeLastColumnToFit];
@@ -644,7 +642,7 @@
     }
 }
 
-- (float) outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id) item
+- (CGFloat) outlineView:(NSOutlineView *)outlineView heightOfRowByItem:(id) item
 {
     int row = [outlineView rowForItem:item];
     int level = [outlineView levelForRow:row];
@@ -659,6 +657,7 @@
 - (id) outlineView:(NSOutlineView *) outlineView objectValueForTableColumn:(NSTableColumn *) tableColumn byItem:(id) item 
 {
     int row = [outlineView rowForItem:item];
+    NSRect rowRect = [outlineView rectOfRow:row];
     int level = [outlineView levelForRow:row];
     BOOL allSmall = [[NSUserDefaults standardUserDefaults] boolForKey:@"lemuria.display.smallicons"];
 
