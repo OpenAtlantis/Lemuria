@@ -14,7 +14,7 @@ static NSImage *s_folderIcon = nil;
 
 #pragma mark Helper Functions
 
-int compareViews(id view1, id view2, void *context)
+NSInteger compareViews(id view1, id view2, void *context)
 {
     unsigned weight1 = [view1 viewWeight];
     unsigned weight2 = [view2 viewWeight];

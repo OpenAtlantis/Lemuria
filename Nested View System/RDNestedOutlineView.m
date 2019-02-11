@@ -149,12 +149,12 @@
 
         NSImage *image = [[[NSImage alloc] initWithSize:NSMakeSize(1.0,1.0)] autorelease]; 
         [image lockFocus]; 
-        [[NSColor clearColor] set]; 
-        NSRectFill(NSMakeRect(0.0,0.0,1.0,1.0)); 
+        [[NSColor grayColor] set];
+        NSRectFill(NSMakeRect(0.0,0.0,5.0,5.0));
         [image unlockFocus]; 
         [image setFlipped:YES]; 
         [self setDivider:image]; 
-        [self setDividerThickness:0.5]; 
+        [self setDividerThickness:0.5];
         [self setBackground:[NSColor lightGrayColor]];
         [self restoreState:YES];
         
@@ -460,6 +460,10 @@
         return;
 
     float dimension = [_rdOutlineContainer dimension];
+    if (dimension < 25.0) {
+        dimension = 25.0;
+        [_rdOutlineContainer setDimension:25.0];
+    }
     NSRect windowRect = [[self window] frame];
     float divWidth = [self dividerThickness];
     windowRect.size.width += dimension + divWidth + 5;

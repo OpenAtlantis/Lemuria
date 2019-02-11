@@ -399,6 +399,10 @@
         return;
 
     float dimension = [_rdOutlineContainer dimension];
+    if (dimension < 25.0) {
+        dimension = 25.0;
+        [_rdOutlineContainer setDimension:25.0];
+    }
     NSRect windowRect = [[self window] frame];
     float divWidth = [self dividerThickness];
     windowRect.size.width += dimension + divWidth + 5;
