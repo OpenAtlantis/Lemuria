@@ -36,7 +36,7 @@
 	[self calculateAutoScroll];
 }
 
-- (void)setFloatValue:(float)aFloat knobProportion:(float)knobProp
+- (void)setFloatValue:(float)aFloat knobProportion:(CGFloat)knobProp
 {
     [super setFloatValue:aFloat knobProportion:knobProp];
 }
@@ -72,7 +72,7 @@
 - (void) awakeFromNib
 {
     RDScroller *rdScroller;
-	
+
     rdScroller=[[RDScroller alloc] init];
     [self setVerticalScroller: rdScroller];
     [rdScroller release];
@@ -88,19 +88,20 @@
     NSParameterAssert([self contentView] != nil);
 	
     RDScroller *rdScroller;
-	
+
     rdScroller=[[RDScroller alloc] init];
     [self setVerticalScroller: rdScroller];
-    	
+    [rdScroller release];
+    
     return self;
 }
 
 - (void) scrollWheel:(NSEvent *) theEvent
 {
     RDScroller *scroller = (RDScroller *)[self verticalScroller];
-        
+
     [super scrollWheel: theEvent];
-	[scroller calculateAutoScroll];
+    [scroller calculateAutoScroll];
 }
 
 - (BOOL) autoScroll 
@@ -109,17 +110,17 @@
 
     if (![self hasVerticalScroller])
         result = YES;
-        
+
     if (!result)
         result = [(RDScroller *)[self verticalScroller] autoScroll];
-        
+
     return result;
 }
 
 - (void) recalculateAutoScroll
 {
-	RDScroller *scroll = (RDScroller *)[self verticalScroller];
-	
+    RDScroller *scroll = (RDScroller *)[self verticalScroller];
+
     [scroll calculateAutoScroll];
 }
 
