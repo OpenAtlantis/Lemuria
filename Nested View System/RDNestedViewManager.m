@@ -975,7 +975,8 @@ static RDNestedViewManager *sManager = nil;
 
     NSPasteboard *pboard = [NSPasteboard pasteboardWithName:NSDragPboard];
     [pboard declareTypes:[NSArray array] owner:self];
-    
+    [pboard setData:[[view viewPath] dataUsingEncoding:NSUTF8StringEncoding] forType:NSPasteboardTypeString];
+        
     NSSize dragOffset = NSMakeSize(0,0);
     NSPoint dragPoint = [anEvent locationInWindow];
     
