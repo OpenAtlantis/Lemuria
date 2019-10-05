@@ -84,18 +84,18 @@
 
 #pragma mark -
 #pragma mark Accessors
-
-- (id)controlView
-{
-    return self.controlView;
-}
-
-- (void)setControlView:(id)view
-{
-    // no retain release pattern, as this simply switches a tab to another view.
-    self.controlView = view;
-}
-
+//
+//- (id)controlView
+//{
+//    return self.controlView;
+//}
+//
+//- (void)setControlView:(id)view
+//{
+//    // no retain release pattern, as this simply switches a tab to another view.
+//    self.controlView = view;
+//}
+//
 - (NSTrackingRectTag)closeButtonTrackingTag
 {
     return _closeButtonTrackingTag;
