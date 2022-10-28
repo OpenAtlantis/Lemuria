@@ -149,7 +149,7 @@
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Lemuria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lemuria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		FF21CDD50999CC110029EC72 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/sheetinfo.strings; sourceTree = "<group>"; };
+		FF21CDD50999CC110029EC72 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/sheetinfo.strings; sourceTree = "<group>"; };
 		FF21CDDD0999CC3E0029EC72 /* close.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = close.tif; path = "Nested View System/Images/close.tif"; sourceTree = "<group>"; };
 		FF21CDDE0999CC3E0029EC72 /* closePressed.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = closePressed.tif; path = "Nested View System/Images/closePressed.tif"; sourceTree = "<group>"; };
 		FF21CDDF0999CC3E0029EC72 /* redlight.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = redlight.tiff; path = "Nested View System/Images/redlight.tiff"; sourceTree = "<group>"; };

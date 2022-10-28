@@ -475,7 +475,7 @@
         if (eatLines > _rdTotalLines)
             eatLines = _rdTotalLines;
 
-        const char *mainString = [[[self textStorage] string] cString];
+        const char *mainString = [[[self textStorage] string] cStringUsingEncoding:NSUTF8StringEncoding];
         const char *ptr, *lastPtr;
         unsigned int mainLength = [[self textStorage] length];
         NSRange killRange = NSMakeRange(0,0);
@@ -508,7 +508,7 @@
             NSRange glyphRange = [layout glyphRangeForCharacterRange:killRange actualCharacterRange:&actualRange];
             NSRect glyphRect = [layout boundingRectForGlyphRange:glyphRange inTextContainer:container];
             
-            _rdHeightEaten == glyphRect.size.height;
+            _rdHeightEaten = glyphRect.size.height;
             
             [[self textStorage] deleteCharactersInRange:killRange];
 
@@ -593,7 +593,7 @@
 
 - (void) forceLayout
 {
-    unsigned firstChar, firstGlyph;
+    unsigned long firstChar, firstGlyph;
     
     firstChar = firstGlyph = 0;
     
