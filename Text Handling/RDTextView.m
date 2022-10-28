@@ -138,7 +138,7 @@
 	NSRange			charRange;
 	NSRange			linkRange;
 	NSRectArray		linkRects;
-	unsigned		linkCount;
+	unsigned long	linkCount;
 	int				scanLoc;
 	int				index;
 	
