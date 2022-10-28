@@ -933,7 +933,6 @@ static RDNestedViewManager *sManager = nil;
     RDNestedViewWindow *window = (RDNestedViewWindow *)[_rdWindowMappings valueForKey:[view viewUID]];
     
     NSImage *appImage = [[NSWorkspace sharedWorkspace] iconForFile:[[NSBundle mainBundle] bundlePath]];
-    [appImage setScalesWhenResized:YES];
     [appImage setSize:NSMakeSize(45,45)];
 
     if (window) {
@@ -1009,7 +1008,7 @@ static RDNestedViewManager *sManager = nil;
     NSWindow *window = [NSApp windowAtPoint:aPoint ignoreWindow:nil];
 
     if (!window || (![window isKindOfClass:[RDNestedViewWindow class]])) {
-        NSString *windowUID = [NSString stringWithFormat:@"lemuria_window:%lu.%lu",
+        NSString *windowUID = [NSString stringWithFormat:@"lemuria_window:%f.%lu",
             [NSDate timeIntervalSinceReferenceDate], [[RDNestedViewManager manager] uidCounter]];
             
         NSRect frame = _rdDragRect;

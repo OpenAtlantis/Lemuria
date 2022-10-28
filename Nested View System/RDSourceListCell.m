@@ -161,7 +161,7 @@
 		NSString *statusText;
         statusText = [NSString stringWithFormat:@"%d", _rdStatusNumber];
         if (_rdStatusNumber > 9999) {
-            statusText = [NSString stringWithString:@"lots"];
+            statusText = @"lots";
         }
 		NSSize numberSize = [statusText sizeWithAttributes:statusNumberAttributes];
 		statusWidth = numberSize.width + 12.;

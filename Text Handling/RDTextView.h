@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface RDTextView : NSTextView {
+@interface RDTextView : NSTextView <NSTextViewDelegate> {
 
 	NSPanel *				_rdRollOverWindow;
 	NSTextField *           _rdRollOverText;

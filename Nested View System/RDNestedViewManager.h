@@ -15,7 +15,7 @@
 - (id) nestedWindowToolbar:(NSString *) windowUID;
 @end
 
-@interface RDNestedViewManager : NSObject {
+@interface RDNestedViewManager : NSObject <NSWindowDelegate> {
 
     NSMutableArray              *_rdAllViews;
     NSMutableArray              *_rdActiveViews;

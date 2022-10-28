@@ -36,7 +36,7 @@
     NSView *view = [self contentView];
     
     if ([view conformsToProtocol:@protocol(RDNestedViewDisplay)])
-        return view;
+        return (NSView<RDNestedViewDisplay> *)view;
     else
         return nil;
 }

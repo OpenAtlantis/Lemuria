@@ -7,7 +7,7 @@
 //	Some Rights Reserved under the Creative Commons Attribution License, version 2.5, and/or the MIT License.
 //
 
-#import "RBSplitSubview.h"
+#import <Lemuria/RBSplitSubview.h>
 
 // These values are used to handle the various cursor types.
 typedef enum {

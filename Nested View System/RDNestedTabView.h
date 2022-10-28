@@ -10,7 +10,7 @@
 #import <Lemuria/RDNestedViewDisplay.h>
 #import <Lemuria/RDNestedViewCollection.h>
 
-@interface RDNestedTabView : NSTabView <RDNestedViewDisplay> {
+@interface RDNestedTabView : NSTabView <RDNestedViewDisplay, NSTabViewDelegate> {
 
     RDNestedViewCache           *_rdViewCollection;
     

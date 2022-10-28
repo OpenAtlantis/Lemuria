@@ -48,8 +48,8 @@ NSInteger compareViews(id view1, id view2, void *context)
     else
         _rdWeight = 1;
     _rdViewPath = [[path copyWithZone:nil] retain];
-    _rdViewName = [[[[path componentsSeparatedByString:@":"] lastObject] string] retain];
-    _rdViewUID = [[NSString stringWithFormat:@"placeholderView:%lu.%lu", [NSDate timeIntervalSinceReferenceDate], [[RDNestedViewManager manager] uidCounter]] retain];
+    _rdViewName = [[[path componentsSeparatedByString:@":"] lastObject] retain];
+    _rdViewUID = [[NSString stringWithFormat:@"placeholderView:%f.%lu", [NSDate timeIntervalSinceReferenceDate], [[RDNestedViewManager manager] uidCounter]] retain];
     
     return self;
 }
